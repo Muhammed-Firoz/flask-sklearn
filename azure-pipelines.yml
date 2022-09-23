@@ -32,8 +32,6 @@ stages:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.7'
-        addToPath: true
-        architecture: 'x64'
       displayName: 'Using python 3.7'
     - script: |
         python3.7 -m pip install --upgrade pip
