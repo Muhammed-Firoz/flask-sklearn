@@ -6,14 +6,14 @@
 trigger:
 - master
 
-pool: project6
+pool: proj6AgentPool
 
 variables:
   # Service connection name 
-  azureServiceConnectionId: 'firstserviceconnection'
+  azureServiceConnectionId: 'firstSC'
   
   # Existing Web App name
-  webAppName: 'flaskmlappservicefiros'
+  webAppName: 'firozflaskmlapp'
 
   # Environment name
   environmentName: 'flask-ml-service'
