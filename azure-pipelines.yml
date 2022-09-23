@@ -34,23 +34,12 @@ stages:
       - task: UsePythonVersion@0
         inputs:
           versionSpec: '$(pythonVersion)'
-          displayName: 'Use Python $(pythonVersion)'
-    - script: |
+
+      - script: |
          python -m venv antenv
          source antenv/bin/activate
          python -m pip install --upgrade pip
          pip install setup
          pip install -r requirements.txt
-      workingDirectory: $(projectRoot)
-      displayName: "Install requirements"
-
-
-
-
-
-
-
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-      displayName: 'Run a multi-line script'
+        workingDirectory: $(projectRoot)
+        displayName: "Install requirements"
