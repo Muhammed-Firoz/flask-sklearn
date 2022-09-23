@@ -29,17 +29,10 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: proj6AgentPool
-    steps:
-      - task: UsePythonVersion@0
-        inputs:
-          versionSpec: '$(pythonVersion)'
-
-      - script: |
-         python -m venv antenv
-         source antenv/bin/activate
-         python -m pip install --upgrade pip
-         pip install setup
-         pip install -r requirements.txt
-        workingDirectory: $(projectRoot)
-        displayName: "Install requirements"
+    pool: $(pool)
+    steps:    
+    - script: |
+        python3.7 -m pip install --upgrade pip
+        python3.7 -m pip install setup
+        python3.7 -m pip install -r requirements.txt
+      workingDirectory: $(projectRoot)
