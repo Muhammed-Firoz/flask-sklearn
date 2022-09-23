@@ -6,8 +6,39 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+pool: project6
+
+variables:
+  # Service connection name 
+  azureServiceConnectionId: 'firstserviceconnection'
+  
+  # Existing Web App name
+  webAppName: 'flaskmlappservicefiros'
+
+  # Environment name
+  environmentName: 'flask-ml-service'
+
+  # Project root folder. Point to the folder containing manage.py file.
+  projectRoot: $(System.DefaultWorkingDirectory)
+
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: BuildJob
+    pool: project6
+    steps:    
+    - script: |
+        python3.7 -m pip install --upgrade pip
+        python3.7 -m pip install setup
+        python3.7 -m pip install -r requirements.txt
+      workingDirectory: $(projectRoot)
+      displayName: 'myStep 1'
+
+
+
+
 
 steps:
 - script: echo Hello, world!
