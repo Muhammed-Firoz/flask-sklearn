@@ -29,7 +29,7 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: project6
+    pool: proj6AgentPool
     steps:
       - task: UsePythonVersion@0
         inputs:
