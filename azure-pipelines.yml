@@ -43,8 +43,7 @@ stages:
     - script: |
         python -m venv antenv
         source antenv/bin/activate
-        export PATH=$HOME/.local/lib/python3.7:$PATH
-        make install
+        export PATH=$HOME/.local/bin:$PATH
         make lint
       workingDirectory: $(projectRoot)
       displayName: 'Run lint tests'
