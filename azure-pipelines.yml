@@ -40,6 +40,7 @@ stages:
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
       workingDirectory: $(projectRoot)
+      displayName: 'Installing requirements'
     - script: |
         python -m venv antenv
         source antenv/bin/activate
