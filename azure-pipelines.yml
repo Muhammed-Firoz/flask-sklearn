@@ -40,6 +40,12 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: 'Installing requirements'
 
+    - script: |
+        make install
+        make lint
+      workingDirectory: $(projectRoot)
+      displayName: 'Installing requirements'
+
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
