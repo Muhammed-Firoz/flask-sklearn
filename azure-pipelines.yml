@@ -42,10 +42,9 @@ stages:
 
     - script: |
         export PATH=$HOME/.local/bin:$PATH
-        make install
         make lint
       workingDirectory: $(projectRoot)
-      displayName: 'Installing requirements'
+      displayName: 'Run lint tests'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
