@@ -34,16 +34,12 @@ stages:
     pool: $(pool)
     steps:    
     - script: |
-        python -m venv antenv
-        source antenv/bin/activate
         python3.7 -m pip install --upgrade pip
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: 'Installing requirements'
     - script: |
-        python -m venv antenv
-        source antenv/bin/activate
         export PATH=$HOME/.local/bin:$PATH
         make lint
       workingDirectory: $(projectRoot)
