@@ -37,13 +37,9 @@ stages:
         python3.7 -m pip install --upgrade pip
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
-      workingDirectory: $(projectRoot)
-      displayName: 'Installing requirements'
-    - script: |
-        export PATH=$HOME/.local/bin:$PATH
         make lint
       workingDirectory: $(projectRoot)
-      displayName: 'Run lint tests'
+      displayName: 'Installing requirements'
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
