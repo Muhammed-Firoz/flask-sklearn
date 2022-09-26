@@ -13,7 +13,7 @@ variables:
   azureServiceConnectionId: 'firstSC'
   
   #Agent pool name
-  pool: default
+  pool: 'proj6AgentPool'
   # Existing Web App name
   webAppName: 'firozflaskmlapp'
 
